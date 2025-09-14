@@ -33,7 +33,7 @@ export default function NavBar({darkMode, toggleTheme}: NavBarProps) {
         <div className={`text-black/40 font-medium text-2xl ${darkMode ? 'text-white' : 'text-black/40' }`}>
             <h1>benevolent</h1>
         </div>
-            <ul className={`flex items-center gap-x-8 bg-gray-200 rounded-2xl px-8 py-3 text-lg ${darkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-200 text-black'}`}>
+            <ul className={`flex items-center gap-x-8 bg-gray-200 rounded-2xl px-4 py-2 text-lg ${darkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-200 text-black'}`}>
                 {navItems.map((item) => (
                     <li key={item.name} onClick={() => setActive(item.name)} className={`cursor-pointer text-lg rounded-2xl p-2 transition-all ${active === item.name ? `${darkMode ? 'bg-gray-100 text-gray-900' : 'bg-white text-black'} shadow-lg` : 'hover:bg-gray-200 text-gray-700'}`}>{item.icon}</li>
                 ))}

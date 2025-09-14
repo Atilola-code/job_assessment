@@ -17,7 +17,7 @@ export default function RootLayout({
         <NavBar darkMode= {darkMode} toggleTheme={() => setDarkMode(!darkMode)}/>
           <HeroSwiper />
           <Generator />
-        <main className="h-screen transition-colors">{children}</main>
+        <main className="transition-colors">{children}</main>
       </body>
     </html>
   );
