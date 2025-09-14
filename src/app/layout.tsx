@@ -16,7 +16,7 @@ export default function RootLayout({
       <body className={darkMode ? "dark bg-gray-900 text-white" : "bg-white text-black"}>
         <NavBar darkMode= {darkMode} toggleTheme={() => setDarkMode(!darkMode)}/>
           <HeroSwiper />
-          <Generator />
+          <Generator darkMode={darkMode}/>
         <main className="transition-colors">{children}</main>
       </body>
     </html>

@@ -7,7 +7,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoBody, IoVideocam } from "react-icons/io5";
 import { MdOutlineModelTraining } from "react-icons/md";
 
-export default function Generator() {
+
+interface GeneratorProps {
+    darkMode: boolean
+}
+
+export default function Generator({darkMode}: GeneratorProps) {
   const items = [
     {
       icon: <BsCardImage className="p-2 text-5xl bg-gray-500 text-white rounded-lg" />,
@@ -79,7 +84,7 @@ export default function Generator() {
             <div>{item.icon}</div>
             <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <p className="font-semibold text-lg">{item.title}</p>
+              <p className={`font-semibold text-lg ${darkMode ? 'text-gray-900' : 'text-gray-800' }`}>{item.title}</p>
               {item.new && (
                   <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">
                   New
@@ -88,7 +93,7 @@ export default function Generator() {
             </div>
             <p className="text-sm text-gray-700 leading-snug break-words max-w-sm">{item.description}</p>
               </div>
-            <button className="px-4 py-1 bg-gray-200 rounded-full text-sm font-medium hover:bg-gray-400">
+            <button className={`px-4 py-1 bg-gray-300 rounded-full text-sm font-medium  ${darkMode ? 'hover:text-white ' : 'hover:text-gray-700'}`}>
               Open
             </button>
               </div>
