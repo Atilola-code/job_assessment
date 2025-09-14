@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Mousewheel } from "swiper/modules";
 import "swiper/css";
@@ -56,7 +57,7 @@ export default function HeroSwiper() {
               '--swiper-pagination-color': '#ffffff',
               '--swiper-navigation-color': '#ffffff',
               '--swiper-pagination-bottom': '20px'
-            } as any}
+            } as React.CSSProperties}
           >
             {section1.map((slide, index) => (
               <SwiperSlide key={index}>
@@ -64,7 +65,9 @@ export default function HeroSwiper() {
                   <Image
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-full object-cover"/>
+                    fill
+                    className="w-full h-full object-cover" 
+                    priority={index === 0}/>
                 </div>
               </SwiperSlide>
             ))}
@@ -103,16 +106,22 @@ export default function HeroSwiper() {
             <Image
               src={section2.image1}
               alt="First layered image"
+              width={300}
+              height={300}
               className="absolute top-0 left-8 w-4/5 h-5/5 object-cover rounded-2xl shadow-lg z-20"
             />
             <Image
               src={section2.image2}
               alt="Second layered image"
+              width={300}
+              height={300}
               className="absolute top-2 left-16 w-3/5 h-5/5 object-cover rounded-2xl shadow-lg z-30"
             />
             <Image
               src={section2.image3}
               alt="Third layered image"
+              width={300}
+              height={300}
               className="absolute top-0 left-24 w-8/10 h-5/5 object-cover rounded-2xl shadow-lg z-40"/>
           </div>
 
