@@ -4,6 +4,7 @@ import { Pagination, Navigation, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 interface SlideData {
   image: string;
@@ -60,7 +61,7 @@ export default function HeroSwiper() {
             {section1.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="relative w-full h-full">
-                  <img
+                  <Image
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
                     className="w-full h-full object-cover"/>
@@ -99,17 +100,17 @@ export default function HeroSwiper() {
 
         <div className="relative h-[300px] w-full lg:w-[400px] rounded-3xl overflow-hidden shadow-md shrink-0">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src={section2.image1}
               alt="First layered image"
               className="absolute top-0 left-8 w-4/5 h-5/5 object-cover rounded-2xl shadow-lg z-20"
             />
-            <img
+            <Image
               src={section2.image2}
               alt="Second layered image"
               className="absolute top-2 left-16 w-3/5 h-5/5 object-cover rounded-2xl shadow-lg z-30"
             />
-            <img
+            <Image
               src={section2.image3}
               alt="Third layered image"
               className="absolute top-0 left-24 w-8/10 h-5/5 object-cover rounded-2xl shadow-lg z-40"/>
