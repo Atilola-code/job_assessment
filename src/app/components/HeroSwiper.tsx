@@ -57,7 +57,7 @@ export default function HeroSwiper() {
               '--swiper-pagination-color': '#ffffff',
               '--swiper-navigation-color': '#ffffff',
               '--swiper-pagination-bottom': '20px'
-            } as React.CSSProperties}
+            } as React.CSSProperties & Record<string, string>}
           >
             {section1.map((slide, index) => (
               <SwiperSlide key={index}>
